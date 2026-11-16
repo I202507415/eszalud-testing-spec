@@ -1,11 +1,11 @@
 package com.eszalud.model;
 
 public class Paciente {
-    private String documento;
-    private String nombres;
-    private String apellidos;
-    private String telefono;
-    private String correo;
+    private final String documento;
+    private final String nombres;
+    private final String apellidos;
+    private final String telefono;
+    private final String correo;
 
 
     public Paciente(String documento,
