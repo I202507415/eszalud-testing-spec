@@ -23,6 +23,11 @@ public class Doctor {
                     "Los nombres no pueden ser null"
             );
         }
+        if (apellidos == null) {
+            throw new IllegalArgumentException(
+                    "Los apellidos no pueden ser null"
+            );
+        }
 
 
         this.documento = documento;
