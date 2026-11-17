@@ -16,4 +16,17 @@ public class EspecialidadTest {
         assertEquals("ESP001", especialidad.getCodigo());
         assertEquals("Cardiología", especialidad.getNombre());
     }
+
+    @Test
+    @DisplayName("ESP-002: Crear especialidad sin nombre")
+    void shouldRejectSpecialtyWithNullName() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Especialidad(
+                    "ESP001",
+                    null
+            );
+        });
+    }
+
 }
