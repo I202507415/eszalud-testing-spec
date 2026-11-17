@@ -14,22 +14,9 @@ public class Paciente {
                     String telefono,
                     String correo) {
 
-        if (documento == null) {
-            throw new IllegalArgumentException(
-                    "El documento no puede ser null"
-            );
-        }
-        if (nombres == null) {
-            throw new IllegalArgumentException(
-                    "Los nombres no pueden ser null"
-            );
-        }
-        if (apellidos == null) {
-            throw new IllegalArgumentException(
-                    "Los apellidos no pueden ser null"
-            );
-        }
-
+        validarObligatorio(documento, "El documento");
+        validarObligatorio(nombres, "Los nombres");
+        validarObligatorio(apellidos, "Los apellidos");
 
         this.documento = documento;
         this.nombres = nombres;
@@ -37,6 +24,13 @@ public class Paciente {
         this.telefono = telefono;
         this.correo = correo;
 
+    }
+    private static void validarObligatorio(String valor, String campo) {
+        if (valor == null) {
+            throw new IllegalArgumentException(
+                    campo + " no puede ser null"
+            );
+        }
     }
 
     public String getDocumento() {
