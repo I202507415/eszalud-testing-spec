@@ -12,32 +12,25 @@ public class Doctor {
                   String apellidos,
                   String colegiatura) {
 
-        if (documento == null) {
-            throw new IllegalArgumentException(
-                    "El documento no puede ser null"
-            );
-        }
-
-        if (nombres == null) {
-            throw new IllegalArgumentException(
-                    "Los nombres no pueden ser null"
-            );
-        }
-        if (apellidos == null) {
-            throw new IllegalArgumentException(
-                    "Los apellidos no pueden ser null"
-            );
-        }
-        if (colegiatura == null) {
-            throw new IllegalArgumentException(
-                    "La colegiatura no puede ser null"
-            );
-        }
+        validarObligatorio(documento, "El documento");
+        validarObligatorio(nombres, "Los nombres");
+        validarObligatorio(apellidos, "Los apellidos");
+        validarObligatorio(colegiatura, "La colegiatura");
 
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.colegiatura = colegiatura;
+    }
+
+    private static void validarObligatorio(
+            String valor, String campo) {
+
+        if (valor == null) {
+            throw new IllegalArgumentException(
+                    campo + " no puede ser null"
+            );
+        }
     }
 
     public String getDocumento() {
