@@ -29,4 +29,19 @@ public class EspecialidadTest {
         });
     }
 
+    @Test
+    @DisplayName("ESP-003: Verificar atributos de la especialidad")
+    void shouldReturnCorrectSpecialtyAttributes() {
+
+        Especialidad especialidad = new Especialidad(
+                "ESP002",
+                "Neurología"
+        );
+
+        assertAll(
+                () -> assertEquals("ESP002", especialidad.getCodigo()),
+                () -> assertEquals("Neurología", especialidad.getNombre())
+        );
+    }
+
 }
