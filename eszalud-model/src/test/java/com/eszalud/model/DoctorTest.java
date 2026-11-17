@@ -26,5 +26,20 @@ public class DoctorTest {
 
     }
 
+    @Test
+    @DisplayName("DOC-002: Crear doctor sin documento")
+    void shouldRejectDoctorWithNullDocument() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Doctor(
+                    null,
+                    "Carlos",
+                    "Ramírez",
+                    "CMP12345"
+            );
+        });
+    }
+
+
 
 }
