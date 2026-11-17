@@ -12,6 +12,12 @@ public class Doctor {
                   String apellidos,
                   String colegiatura) {
 
+        if (documento == null) {
+            throw new IllegalArgumentException(
+                    "El documento no puede ser null"
+            );
+        }
+
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
