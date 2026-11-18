@@ -27,6 +27,11 @@ public class CitaMedica {
                     "El identificador del doctor no puede ser null"
             );
         }
+        if (idEspecialidad == null) {
+            throw new IllegalArgumentException(
+                    "El identificador de la especialidad no puede ser null"
+            );
+        }
 
         this.idPaciente = idPaciente;
         this.idDoctor = idDoctor;
