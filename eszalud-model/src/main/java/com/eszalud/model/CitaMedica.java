@@ -16,6 +16,13 @@ public class CitaMedica {
             LocalDateTime fechaHora,
             String estado
     ) {
+
+        if (idPaciente == null) {
+            throw new IllegalArgumentException(
+                    "El identificador del paciente no puede ser null"
+            );
+        }
+
         this.idPaciente = idPaciente;
         this.idDoctor = idDoctor;
         this.idEspecialidad = idEspecialidad;
