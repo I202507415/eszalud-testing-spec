@@ -91,4 +91,21 @@ public class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-005: Crear cita sin fecha y hora")
+    void shouldRejectMedicalAppointmentWithNullDateTime() {
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        "PAC001",
+                        "DOC001",
+                        "ESP001",
+                        null,
+                        "PROGRAMADA"
+                )
+        );
+    }
+
+
 }
