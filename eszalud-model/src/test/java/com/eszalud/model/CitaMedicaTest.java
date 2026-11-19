@@ -107,5 +107,24 @@ public class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-006: Crear cita con estado null")
+    void shouldAssignDefaultStateWhenStateIsNull() {
+
+        LocalDateTime fechaHora =
+                LocalDateTime.of(2026, 11, 23, 16, 30);
+
+        CitaMedica cita = new CitaMedica(
+                "PAC001",
+                "DOC001",
+                "ESP001",
+                fechaHora,
+                null
+        );
+
+        assertNotNull(cita);
+        assertEquals("PROGRAMADA", cita.getEstado());
+    }
+
 
 }
