@@ -145,5 +145,35 @@ public class CitaMedicaTest {
         assertEquals("ATENDIDA", cita.getEstado());
     }
 
+    @Test
+    @DisplayName("CIT-008: Verificar atributos de la cita médica")
+    void shouldReturnCorrectMedicalAppointmentAttributes() {
+
+        String idPaciente = "PAC002";
+        String idDoctor = "DOC003";
+        String idEspecialidad = "ESP002";
+
+        LocalDateTime fechaHora =
+                LocalDateTime.of(2026, 11, 26, 10, 5);
+
+        String estado = "ATENDIDA";
+
+        CitaMedica cita = new CitaMedica(
+                idPaciente,
+                idDoctor,
+                idEspecialidad,
+                fechaHora,
+                estado
+        );
+
+        assertAll(
+                () -> assertEquals(idPaciente, cita.getIdPaciente()),
+                () -> assertEquals(idDoctor, cita.getIdDoctor()),
+                () -> assertEquals(idEspecialidad, cita.getIdEspecialidad()),
+                () -> assertEquals(fechaHora, cita.getFechaHora()),
+                () -> assertEquals(estado, cita.getEstado())
+        );
+    }
+
 
 }
