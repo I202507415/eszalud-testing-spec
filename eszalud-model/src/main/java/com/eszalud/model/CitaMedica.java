@@ -32,6 +32,11 @@ public class CitaMedica {
                     "El identificador de la especialidad no puede ser null"
             );
         }
+        if (fechaHora == null) {
+            throw new IllegalArgumentException(
+                    "La fecha y hora de la cita no puede ser null"
+            );
+        }
 
         this.idPaciente = idPaciente;
         this.idDoctor = idDoctor;
