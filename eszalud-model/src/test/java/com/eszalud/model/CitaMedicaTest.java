@@ -126,5 +126,24 @@ public class CitaMedicaTest {
         assertEquals("PROGRAMADA", cita.getEstado());
     }
 
+    @Test
+    @DisplayName("CIT-007: Crear cita médica con estado válido")
+    void shouldPreserveValidAppointmentState() {
+
+        LocalDateTime fechaHora =
+                LocalDateTime.of(2026, 11, 23, 16, 30);
+
+        CitaMedica cita = new CitaMedica(
+                "PAC001",
+                "DOC001",
+                "ESP001",
+                fechaHora,
+                "ATENDIDA"
+        );
+
+        assertNotNull(cita);
+        assertEquals("ATENDIDA", cita.getEstado());
+    }
+
 
 }
